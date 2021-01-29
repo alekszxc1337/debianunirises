@@ -15,7 +15,7 @@ SSH_Banner='https://pastebin.com/raw/txZhxLfG'
 Dropbear_Port1='550'
 Dropbear_Port2='555'
 
-# Stunnel Ports
+# Stunnets
 Stunnel_Port1='443' # through Dropbear
 Stunnel_Port2='444' # through OpenSSH
 
@@ -35,7 +35,7 @@ MyVPS_Time='Asia/Manila'
 
 
 #############################
-#############################
+############################
 ## All function used for this script
 #############################
 ## WARNING: Do not modify or edit anything
@@ -44,7 +44,7 @@ MyVPS_Time='Asia/Manila'
 #############################
 #############################
 
-function InstUpdates(){
+function InstUpdates()
  export DEBIAN_FRONTEND=noninteractive
  apt-get update
  apt-get upgrade -y
@@ -53,7 +53,7 @@ function InstUpdates(){
  apt-get remove --purge ufw firewalld -y
 
  
- # Installing some important machine essentials
+ # Installing some important machine essential
  apt-get install nano wget curl zip unzip tar gzip p7zip-full bc rc openssl cron net-tools dnsutils dos2unix screen bzip2 ccrypt -y
  
  # Now installing all our wanted services
@@ -65,7 +65,7 @@ function InstUpdates(){
  # Installing a text colorizer
  gem install lolcat
 
- # Trying to remove obsolette packages after installation
+ # Trying to remove obsolette packages after installatio
  apt-get autoremove -y
  
  # Installing OpenVPN by pulling its repository inside sources.list file 
@@ -74,7 +74,7 @@ function InstUpdates(){
  wget -qO - http://build.openvpn.net/debian/openvpn/stable/pubkey.gpg|apt-key add -
  apt-get update
  apt-get install openvpn -y
-}
+
 
 function InstWebmin(){
  # Download the webmin .deb package
@@ -83,7 +83,7 @@ function InstWebmin(){
  wget -qO webmin.deb "$WebminFile"
  
  # Installing .deb package for webmin
- dpkg --install webmin.deb
+ dpkg --install webmin.de
  
  rm -rf webmin.deb
  
@@ -974,4 +974,4 @@ fi
  rm -rf /root/.bash_history && history -c && echo '' > /var/log/syslog
 
 rm -f debian9*
-exit 1
+ex
